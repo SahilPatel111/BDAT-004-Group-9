@@ -54,7 +54,7 @@ def collection_update():
     print(f"Inserted {len(data)} documents.")  # Add a print statement to check how many documents were inserted
 
 # add the task to the scheduler
-scheduler.add_job(collection_update, 'interval', hours=24, start_date=datetime.combine(datetime.now(tz).date(), time(hour=0, minute=0, second=0, microsecond=0)))
+scheduler.add_job(collection_update, 'interval', hours=24, start_date=datetime.combine(datetime.now(tz).date(), time(hour=8, minute=23, second=0, microsecond=0)))
 
 if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':  # Add this condition
     scheduler.start()
